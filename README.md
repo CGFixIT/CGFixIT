@@ -10,14 +10,15 @@
 
 ---
 
-## Knowledge Map — My Domain Clusters
+## What is this for — My Domain Clusters
 
 > My portfolio isn't a collection of random projects (well.. there is some) — it's a converging architecture.  
 > The real differentiator lives **at the intersections**, not inside any single cluster.
 
-> [View interactive map →](https://mail.cgfixit.com/Export/z/knowledge-map/)
-
-*(The diagram below is a quick visual for technical readers)*
+> [Interactive domain map](https://mail.cgfixit.com/Export/z/knowledge-map/)
+<hr>
+> The diagram below is a quick visual for technical readers
+<hr>
 
 ```
            Security / Detection
