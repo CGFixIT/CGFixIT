@@ -6,8 +6,6 @@
 [![Website](https://img.shields.io/badge/cgfixit.com-01696f?style=for-the-badge&logo=safari&logoColor=white)](https://cgfixit.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/cgrady92)
 [![Email](https://img.shields.io/badge/contact@cgfixit.com-333?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contact@cgfixit.com)
-[![Hireable](https://img.shields.io/badge/Hireable-brightgreen?style=for-the-badge)](https://linkedin.com/in/cgrady92)
-
 </div>
 
 ---
