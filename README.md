@@ -74,6 +74,7 @@
 
 | Repo | What it does | Stack |
 |---|---|---|
+| [**PolyMarket_Mimic_Trader**](https://github.com/CGFixIT/PolyMarket_Mimic_Trader) | Autonomous bot that tails the highest-ROI wallets on Polymarket, copies their trades in real time, and enforces configurable bankroll, exposure and stop-loss rules. Async, event-driven engine polls the GraphQL API, ranks traders by Sharpe-like score, executes mirrored orders, logs to Prometheus/Grafana and rolls transactions to an immutable SQLite ledger. Ships with .env-based secrets handling, dry-run / back-test mode, and a loud financial-risk disclaimer. | `Python` `asyncio` `GraphQL` `SQLite` |
 | [**Scrape-n-Email**](https://github.com/CGFixIT/Scrape-n-Email) | Lightweight, reliable scraper for news + job digests (RealClearPolitics headlines + Atlanta Craigslist sysadmin roles). MIME-safe email delivery, formula-safe CSV handling, cross-platform logging, and offline testability. Keeps research and opportunity pipelines clean without manual busywork. | `Python` `BeautifulSoup` `SMTP` |
 
 ---
