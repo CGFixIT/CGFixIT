@@ -39,7 +39,7 @@
     remediation agents  │  soul governance · SQLite
                         │
               AI Safety / Agent Governance
-                  PsyClaw · soul drift detection
+                  CyClaw · soul drift detection
                   SHA-256 integrity · MCP server
                         │
               Automation / Sysadmin (substrate)
@@ -54,7 +54,7 @@
 
 | Repo | What it does | Stack |
 |---|---|---|
-| [**PsyClaw**](https://github.com/CGFixIT/PsyClaw) | Offline-first RAG agent with LangGraph topology acting as enforceable security policy. Hybrid retrieval (ChromaDB + BM25+RRF), SHA-256 soul drift detection, OWASP-aligned prompt sanitization, and MCP server. Built for memory sovereignty and prompt injection resistance in air-gapped or privacy-sensitive environments. | `Python` `LangGraph` `ChromaDB` `FastAPI` `SQLite` |
+| [**CyClaw**](https://github.com/CGFixIT/CyClaw) | Offline-first RAG agent with LangGraph topology acting as enforceable security policy. Hybrid retrieval (ChromaDB + BM25+RRF), SHA-256 soul drift detection, OWASP-aligned prompt sanitization, and MCP server. Built for memory sovereignty and prompt injection resistance in air-gapped or privacy-sensitive environments. | `Python` `LangGraph` `ChromaDB` `FastAPI` `SQLite` |
 | [**AzureAI-CopilotStudio-PersonalAgent-Instructions**](https://github.com/CGFixIT/AzureAI-CopilotStudio-PersonalAgent-Instructions) | Production-tested system instructions for enterprise AI agents. Tiered source hierarchy, anti-hallucination safeguards, and reference implementation patterns (including VeeamGPT). Designed to make agent behavior predictable and auditable at scale. | `Azure OpenAI` `Copilot Studio` `Prompt Engineering` |
 
 ### Security / YARA Detection
@@ -85,8 +85,8 @@
 
 This means:
 - **Veeam** is not just a backup tool — it's a **ground-truth substrate** for AI-assisted recovery decisions.
-- **YARA** is not just malware detection — it's the **prompt injection defense layer** for AI agents (see `sanitizer.py` in PsyClaw → next evolution: `yara-prompt-guard`).
-- **PsyClaw** is not just orchestration — it's **security policy as code** (LangGraph Topology = enforcement).
+- **YARA** is not just malware detection — it's the **prompt injection defense layer** for AI agents (see `sanitizer.py` in CyClaw → next evolution: `yara-prompt-guard`).
+- **CyClaw** is not just orchestration — it's **security policy as code** (LangGraph Topology = enforcement).
 
 ---
 
@@ -111,7 +111,7 @@ This means:
 
 ## Currently Building
 
-- **PsyClaw v1.3** — LangGraph topology rewrite, MCP server, OPA/Rego policy enforcement layer (active development)
+- **CyClaw v1.3** — LangGraph topology rewrite, MCP server, OPA/Rego policy enforcement layer (active development)
 
 ---
 
