@@ -1,4 +1,4 @@
-<!-- ========== HEADER ========== -->
+<!-- ========== HEADER ========== --> 
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0,1a2a3a,01696f&height=160&section=header&text=Chris%20Grady&fontSize=48&fontColor=ffffff&fontAlignY=40&desc=Infrastructure%20Engineer%20%C2%B7%20AI%20Agent%20Builder%20%C2%B7%20Security%20Tooling&descAlignY=62&descSize=16" width="100%"/>
