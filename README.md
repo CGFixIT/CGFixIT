@@ -75,17 +75,6 @@ Projects across backup & DR, security and detection tooling, local LLM/RAG, and 
 
 ---
 
-## The Core Thesis
-
-> *"Backups are ground-truth state — a last-resort record that AI-assisted recovery can reason against."*
-
-How that shows up across the clusters:
-- **Veeam** backups are the reference state for AI-assisted recovery decisions.
-- **YARA** rules written for malware detection double as a prompt-injection pattern filter for the RAG agent (`sanitizer.py` in CyClaw; planned: `yara-prompt-guard`).
-- **CyClaw** enforces security policy in its LangGraph topology rather than in prompt instructions.
-
----
-
 ## Stack at a Glance
 
 <p>
