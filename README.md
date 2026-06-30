@@ -1,7 +1,7 @@
 <!-- ========== HEADER ========== --> 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0,1a2a3a,01696f&height=160&section=header&text=Chris%20Grady&fontSize=48&fontColor=ffffff&fontAlignY=40&desc=Infrastructure%20Engineer%20%C2%B7%20AI%20Agent%20Builder%20%C2%B7%20Security%20Tooling&descAlignY=62&descSize=16" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0,1a2a3a,01696f&height=160&section=header&text=Chris%20Grady&fontSize=48&fontColor=ffffff&fontAlignY=40" width="100%"/>
 
 [![Website](https://img.shields.io/badge/cgfixit.com-01696f?style=for-the-badge&logo=safari&logoColor=white)](https://cgfixit.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/cgrady92)
@@ -50,7 +50,7 @@ Projects across backup & DR, security and detection tooling, local LLM/RAG, and 
 
 | Repo | What it does | Stack |
 |---|---|---|
-| [**CyClaw**](https://github.com/CGFixIT/CyClaw) | Offline-first RAG agent where the LangGraph topology enforces the security policy. Hybrid retrieval (ChromaDB + BM25+RRF), SHA-256 integrity checks on prompt/state (soul-drift detection), OWASP-aligned prompt sanitization, and an MCP server. Runs fully local for air-gapped or privacy-sensitive use. | `Python` `LangGraph` `ChromaDB` `FastAPI` `SQLite` |
+| [**CyClaw**](https://github.com/CGFixIT/CyClaw) | Offline-first RAG agent built on LangGraph — the graph topology enforces the security policy rather than relying on prompt instructions. Hybrid retrieval (ChromaDB + BM25+RRF), OWASP-aligned sanitization, and a local MCP server; runs fully air-gapped. | `Python` `LangGraph` `ChromaDB` `FastAPI` `SQLite` |
 | [**AzureAI-CopilotStudio-PersonalAgent-Instructions**](https://github.com/CGFixIT/AzureAI-CopilotStudio-PersonalAgent-Instructions) | System-instruction templates for enterprise AI agents: tiered source hierarchy, anti-hallucination safeguards, and reference patterns (including VeeamGPT). | `Azure OpenAI` `Copilot Studio` `Prompt Engineering` |
 
 ### Security / YARA Detection
@@ -70,7 +70,7 @@ Projects across backup & DR, security and detection tooling, local LLM/RAG, and 
 
 | Repo | What it does | Stack |
 |---|---|---|
-| [**PolyMarket_Mimic_Trader**](https://github.com/CGFixIT/PolyMarket_Mimic_Trader) | Autonomous bot that tails the highest-ROI wallets on Polymarket, mirrors their trades in real time, and enforces configurable bankroll, exposure, and stop-loss rules. Async event-driven engine polls the GraphQL API, ranks traders by a Sharpe-like score, executes mirrored orders, logs to Prometheus/Grafana, and writes transactions to an immutable SQLite ledger. Includes .env-based secrets handling, dry-run / back-test mode, and a financial-risk disclaimer. | `Python` `asyncio` `GraphQL` `SQLite` |
+| [**PolyMarket_Mimic_Trader**](https://github.com/CGFixIT/PolyMarket_Mimic_Trader) | Async event-driven bot that mirrors the highest-ROI Polymarket wallets in real time. Ranks traders by a risk-adjusted score, enforces configurable bankroll and stop-loss rules, logs to Prometheus/Grafana, and writes an append-only SQLite ledger. Includes dry-run/back-test mode. | `Python` `asyncio` `GraphQL` `SQLite` |
 | [**Scrape-n-Email**](https://github.com/CGFixIT/Scrape-n-Email) | Scraper for news + job digests (RealClearPolitics headlines + Atlanta Craigslist sysadmin roles). MIME-safe email delivery, formula-safe CSV handling, cross-platform logging, and offline testability. | `Python` `BeautifulSoup` `SMTP` |
 
 ---
@@ -95,7 +95,7 @@ Projects across backup & DR, security and detection tooling, local LLM/RAG, and 
 
 ## Currently Building
 
-- **CyClaw v1.7** — LangGraph topology rewrite, MCP server, OPA/Rego policy enforcement layer (active development)
+- **CyClaw** — active development; LangGraph topology rewrite + OPA/Rego policy layer
 
 ---
 
