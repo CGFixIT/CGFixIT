@@ -10,6 +10,11 @@
 
 ---
 
+
+[Interactive domain map](https://mail.cgfixit.com/Export/z/knowledge-map/) — the diagram below is a static version of the same map.
+
+---
+
 ## Domain Clusters
 
 Projects across backup & DR, security and detection tooling, local LLM/RAG, and Windows automation. They're grouped into clusters below. A few reuse each other across cluster lines — for example, the YARA rules that scan restore points also feed the prompt-injection filter in the RAG agent.
