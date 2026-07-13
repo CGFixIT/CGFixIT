@@ -9,42 +9,7 @@ Systems / Solutions Engineer working across **data protection, Windows automatio
 [![Website](https://img.shields.io/badge/cgfixit.com-01696f?style=for-the-badge&logo=safari&logoColor=white)](https://cgfixit.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/cgrady92)
 [![Email](https://img.shields.io/badge/contact%40cgfixit.com-333333?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contact@cgfixit.com)
-</div>
 
----
-
-
-<center>[<a href="https://mail.cgfixit.com/Export/z/knowledge-map/">Interactive Domain Map</a>] - the diagram below is a static version of the same map.
-
----
-
-<h3>## Domain Clusters</center></h3>
-
-```
-           Security / Detection
-               YARA rules · PS1 scanner
-               onion-link detection · OWASP
-                        │
-            ── BRIDGE ──┤── BRIDGE ──
-        YARA pre-restore│  YARA → prompt injection
-        malware-aware DR│  pattern defense for LLMs
-                        │
-  Backup & DR    ───────┼─────── Local LLM / RAG
-  Veeam VBR             │        LangGraph · ChromaDB
-  proxy lifecycle       │        BM25+RRF · Ollama
-  health-check ops      │        offline-first
-                        │
-            ── BRIDGE ──┤── BRIDGE ──
-    VBR telemetry → AI  │  topology = policy enforcement
-    remediation agents  │  soul governance · SQLite
-                        │
-              AI Safety / Agent Governance
-               CyClaw   · soul drift detection
-      SHA-256 integrity · MCP server
-                        │
-              Automation / Sysadmin (substrate)
-       PowerShell· SCCM · WinRM · VMware
-```
 </div>
 
 ---
