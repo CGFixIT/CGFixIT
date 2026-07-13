@@ -21,9 +21,9 @@ Systems / Solutions Engineer working across **data protection, Windows automatio
 <h3>## Domain Clusters</center></h3>
 
 ```
-           Security / Detection
-               YARA rules · PS1 scanner
-               onion-link detection · OWASP
+           Security / Detection / Programming
+               YARA rules · Powershell
+                Python · C2 · OWASP
                         │
             ── BRIDGE ──┤── BRIDGE ──
         YARA pre-restore│  YARA → prompt injection
@@ -31,19 +31,20 @@ Systems / Solutions Engineer working across **data protection, Windows automatio
                         │
   Backup & DR    ───────┼─────── Local LLM / RAG
   Veeam VBR             │        LangGraph · ChromaDB
-  proxy lifecycle       │        BM25+RRF · Ollama
-  health-check ops      │        offline-first
+  Network Security      │        BM25+RRF · Ollama
+Systems Architecture    │        offline-first
                         │
             ── BRIDGE ──┤── BRIDGE ──
-    VBR telemetry → AI  │  topology = policy enforcement
-    remediation agents  │  soul governance · SQLite
+VBR data → AI or SIEM   │  topology = policy enforcement
+    remediation agents  │  Agentic compliance & governance
                         │
-              AI Safety / Agent Governance
-               CyClaw   · soul drift detection
+              AI Safety | Agent Governance
+               CyClaw   · Agentic AI drift detection
       SHA-256 integrity · MCP server
                         │
               Automation / Sysadmin (substrate)
-       PowerShell· SCCM · WinRM · VMware
+       PowerShell· SCCM · HCI · VMware
+       Azure · AWS  · Edge · Hyper-V
 ```
 </div>
 
