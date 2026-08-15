@@ -9,16 +9,68 @@ Systems / Solutions Engineer working across **data protection, Windows automatio
 [![Website](https://img.shields.io/badge/cgfixit.com-01696f?style=for-the-badge&logo=safari&logoColor=white)](https://cgfixit.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/cgrady92)
 [![Email](https://img.shields.io/badge/contact%40cgfixit.com-333333?style=for-the-badge&logo=gmail&logoColor=white)](mailto:contact@cgfixit.com)
+
+[![CyClawOS Demo](https://img.shields.io/badge/▶%20Try%20CyClawOS-live%20demo-01696f?style=for-the-badge)](https://o3mjwe6dliqf6.kimi.page/)
+[![CyClaw Repo](https://img.shields.io/badge/CyClaw-source-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/CGFixIT/CyClaw)
+
 </div>
 
 ---
 
+## Try It: CyClawOS — Interactive CyClaw Demos
 
-<center>[<a href="https://mail.cgfixit.com/Export/z/knowledge-map/">Interactive Domain Map</a>] - the diagram below is a static version of the same map.
+**CyClawOS** is a browser-based desktop environment that puts the [CyClaw](https://github.com/CGFixIT/CyClaw) agent architecture behind a real interface. Instead of a chat box and a diagram, you get a simulated Linux workstation that boots, arms its guardrails, and lets you drive the agent's actual control surfaces: retrieval, the write gate, the soul file, and the audit log.
+
+Two independently deployed builds of the same system, so the demo survives one host having a bad day:
+
+| Demo | Platform | Link |
+|---|---|---|
+| **CyClawOS** — primary | Kimi | **[o3mjwe6dliqf6.kimi.page](https://o3mjwe6dliqf6.kimi.page/)** · short link: [bit.ly/CyClawDemo](https://bit.ly/CyClawDemo) |
+| **CyClawOS** — mirror | Grok | **[cyclaw-demo-cgrady92.grok.me](https://cyclaw-demo-cgrady92.grok.me)** |
+
+```text
+CyClawOS 2.0.0 (linux-x86_64)
+Loading kernel modules .............. ok
+Starting gate.py :8787 .............. ok
+Soul + guardrails ................... armed
+Starting desktop session ............
+```
+
+### What you can actually poke at
+
+| App | What it demonstrates |
+|---|---|
+| **CyClaw Terminal** | Full shell replica with `rag`, `soul`, `sync`, and `agentic` subcommands |
+| **CyClaw Harness** | Chat console with per-request toggles for skills, tools, web, and GitHub |
+| **CyClaw RAG Query** | Hybrid retrieval — ChromaDB dense vectors + BM25 sparse, fused with RRF, with sources and hit latency shown |
+| **Guardrails** | Paste hostile input and watch the 33-pattern deny list evaluate it in the open |
+| **CyClaw Agentic** | `agentic/fsconnect` allow-listed reads and gated writes; `agentic/sqlconnect` restricted to read-only `SELECT` |
+| **Audit Logs / `audit.jsonl`** | Every tool call appended to a JSONL audit trail you can read back |
+| **Soul File** | Human-gated governance directives — the part a prompt is not allowed to edit |
+| **CyClaw Sync** | rclone/Dropbox corpus sync with dry-run before anything is written |
+| **Metrics · Health Check · Config · Docs** | Retrieval latency, gate p95, index size, embedding dimension, live config |
+
+The CyClaw tooling sits inside a complete desktop — file manager, text and code editors, Python runner, git client, SSH and network tools, and the usual accessories — because the point is showing governed agent tooling **in an operating environment**, not as an isolated widget.
+
+The design decisions on display are the ones that matter in the real system:
+
+- **Retrieval always runs before generation.** The LLM is the last node in the graph, not the first.
+- **Writes are gated, reads are allow-listed, SQL is `SELECT`-only.** Denial is the default and it is visible.
+- **Everything is auditable.** If a tool ran, there is a line in `audit.jsonl` saying so.
+
+> **Note:** CyClawOS is a faithful browser-side simulation of the real agent's flows and interfaces — it runs entirely client-side with no live model calls or network access to your data. The production system it mirrors is [CyClaw](https://github.com/CGFixIT/CyClaw) (Python 3.12, LangGraph, ChromaDB, Ollama).
 
 ---
 
-<h3>## Domain Clusters</center></h3>
+<div align="center">
+
+**[Interactive Domain Map](https://mail.cgfixit.com/Export/z/knowledge-map/)** — the diagram below is a static version of the same map.
+
+</div>
+
+---
+
+### Domain Clusters
 
 ```
            Security / Detection / Programming
@@ -46,7 +98,6 @@ VBR data → AI or SIEM   │  topology = policy enforcement
        PowerShell· SCCM · HCI · VMware
        Azure · AWS  · Edge · Hyper-V
 ```
-</div>
 
 ---
 
@@ -65,9 +116,16 @@ VBR data → AI or SIEM   │  topology = policy enforcement
 
 ### [CyClaw](https://github.com/CGFixIT/CyClaw) · Governed, offline-first RAG agent
 
-A local AI agent built around the principle that **architecture should enforce policy**. CyClaw uses LangGraph topology, hybrid retrieval, integrity checks, scoped tooling, and auditable execution to reduce reliance on prompt-only safeguards.
+A local AI agent built around the principle that **architecture should enforce policy**. CyClaw uses a LangGraph state machine, hybrid retrieval, integrity checks, scoped tooling, and auditable execution to reduce reliance on prompt-only safeguards.
 
-`Python` `LangGraph` `FastAPI` `ChromaDB` `BM25 + RRF` `SQLite` `MCP` `Local LLMs`
+`Python 3.12` `LangGraph` `FastAPI` `ChromaDB` `BM25 + RRF` `SQLite` `pgvector` `MCP` `Ollama`
+
+- **RAG-first retrieval** — retrieval runs before generation, every time.
+- **Topology as policy** — the graph decides what is reachable; the prompt does not get a vote.
+- **Scoped tools** — allow-listed filesystem reads, approval-gated writes, read-only SQL.
+- **JSONL audit logging** and SHA-256 integrity checks over the corpus.
+
+**Try it:** [CyClawOS interactive demo](https://o3mjwe6dliqf6.kimi.page/) · [mirror](https://cyclaw-demo-cgrady92.grok.me) · [project page](https://cgfixit.com/CyClaw)
 
 **Why it matters:** organizations need useful AI systems that can operate around sensitive data, constrained networks, and explicit governance requirements without quietly turning every control into a polite suggestion.
 
@@ -83,7 +141,7 @@ PowerShell and YARA tooling for detecting `.onion` infrastructure, cryptocurrenc
 
 ### [SCCM Veeam Proxy Patching](https://github.com/CGFixIT/sccm-veeam-proxy-patching) · Safe infrastructure maintenance
 
-Coordinates Veeam proxy availability with SCCM patching so maintenance can proceed without casually rebooting infrastructure beneath active backup jobs, a surprisingly popular human pastime.
+Coordinates Veeam proxy availability with SCCM patching so maintenance can proceed without casually rebooting infrastructure beneath active backup jobs, a surprisingly popular human pastime. Runs SCCM-integrated or standalone from VBR.
 
 `PowerShell` `SCCM` `WinRM` `VMware` `Veeam`
 
@@ -93,12 +151,26 @@ Coordinates Veeam proxy availability with SCCM patching so maintenance can proce
 
 | Project | Focus | Primary stack |
 |---|---|---|
-| [**Veeam HealthCheck Simplifier**](https://github.com/CGFixIT/Veeam-HealthCheck-Simplifier) | Parses health-check results, identifies remediation work, and streamlines operational follow-up. | `Python` `Veeam` `Automation` |
-| [**Azure AI Agent Instructions**](https://github.com/CGFixIT/AzureAI-CopilotStudio-PersonalAgent-Instructions) | Enterprise agent instruction patterns covering source hierarchy, grounding, and hallucination resistance. | `Azure OpenAI` `Copilot Studio` |
-| [**Insight Extractor**](https://github.com/CGFixIT/Insight_Extractor) | Extracts structured findings, themes, and actionable insights from large text inputs. | `Python` `NLP` `Automation` |
-| [**PolyMarket Mimic Trader**](https://github.com/CGFixIT/PolyMarket_Mimic_Trader) | Event-driven research project for trader ranking, risk controls, simulation, and ledgered execution. | `Python` `asyncio` `GraphQL` `SQLite` |
-| [**Scrape-n-Email**](https://github.com/CGFixIT/Scrape-n-Email) | Resilient scraping and digest delivery with testable parsing and safer CSV/email handling. | `Python` `BeautifulSoup` `SMTP` |
-| [**Windows Admin Cheat Sheet**](https://github.com/CGFixIT/Windows-Admin-Cheat-Sheet) | Practical Windows administration references and repeatable operational commands. | `Windows` `PowerShell` `Sysadmin` |
+| [**Insight Extractor**](https://github.com/CGFixIT/Insight_Extractor) | Turns long threads into structured notes for you or your agent — BERT + regex extraction with a dynamic keyword stemmer, aimed at threat-intel and OSINT pipelines. | `Python` `BERT` `Sentence-Transformers` `Pydantic` `NLP` |
+| [**Veeam HealthCheck Simplifier**](https://github.com/CGFixIT/Veeam-HealthCheck-Simplifier) | Parses VBR health-check results from CSV/JSON, emits PowerShell remediation, and routes findings to Salesforce or Slack. | `Python` `Veeam` `PowerShell` `Automation` |
+| [**Azure AI Agent Instructions**](https://github.com/CGFixIT/AzureAI-CopilotStudio-PersonalAgent-Instructions) | Production-tested enterprise agent instruction patterns covering source hierarchy, grounding, and hallucination resistance. | `Azure OpenAI` `Copilot Studio` `Prompt Engineering` |
+| [**Windows / Linux / Docker Handbook**](https://github.com/CGFixIT/Windows-Linux--Docker-Handbook) | Admin one-liner cheat sheet spanning 2016–2025, published as a searchable web app. [Live app](https://cg-windows-admin-cmd-ps1-ref.pplx.app) · [GitHub Pages](https://cgfixit.github.io/Windows-Linux--Docker-Handbook/) | `HTML` `PowerShell` `Bash` `Docker` |
+| [**PolyMarket Mimic Trader**](https://github.com/CGFixIT/PolyMarket_Mimic_Trader) | Event-driven research project: ranks top Polymarket traders, then applies deliberately conservative thresholds with risk controls, simulation, and ledgered execution. Paper mode only so far. | `Python` `asyncio` `GraphQL` `SQLite` |
+| [**Scrape-n-Email**](https://github.com/CGFixIT/Scrape-n-Email) | Resilient scraping and daily digest delivery with testable parsing, formula-safe CSV handling, and offline tests. | `Python` `BeautifulSoup` `SMTP` |
+
+<details>
+<summary><strong>Earlier public work (archived)</strong></summary>
+
+<br />
+
+| Project | Notes |
+|---|---|
+| [**Blackjack**](https://github.com/CGFixIT/Blackjack) | Console casino blackjack with user accounts. `C++` |
+| [**EMR System**](https://github.com/CGFixIT/EMR-System) | Dentist office medical record simulator with a Swing GUI. `Java` |
+
+Kept public for history. Not maintained, and not representative of current work.
+
+</details>
 
 ---
 
@@ -139,6 +211,7 @@ I tend to optimize for:
 <img src="https://img.shields.io/badge/Veeam-00B336?style=flat-square" alt="Veeam" />
 <img src="https://img.shields.io/badge/Azure_AI-0078D4?style=flat-square&logo=microsoftazure&logoColor=white" alt="Azure AI" />
 <img src="https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white" alt="Ollama" />
+<img src="https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker" />
 <img src="https://img.shields.io/badge/VMware-607078?style=flat-square&logo=vmware&logoColor=white" alt="VMware" />
 <img src="https://img.shields.io/badge/SCCM-0078D7?style=flat-square&logo=windows&logoColor=white" alt="SCCM" />
 </p>
@@ -177,6 +250,7 @@ The projects are not separate hobby bins. Detection logic informs recovery inspe
 ## Current Focus
 
 - Expanding **CyClaw's governed agentic coding and local-model support**.
+- Growing the **CyClawOS demo** so the governance surfaces — write gate, soul file, audit trail — can be evaluated by anyone with a browser.
 - Improving policy enforcement, evaluation, observability, and offline deployment paths.
 - Turning hard-won infrastructure and recovery patterns into reusable security automation.
 
