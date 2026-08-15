@@ -151,7 +151,7 @@ Coordinates Veeam proxy availability with SCCM patching so maintenance can proce
 
 | Project | Focus | Primary stack |
 |---|---|---|
-| [**Insight Extractor**](https://github.com/CGFixIT/Insight_Extractor) | Turns long threads into structured notes for you or your agent — BERT + regex extraction with a dynamic keyword stemmer, aimed at threat-intel and OSINT pipelines. | `Python` `BERT` `Sentence-Transformers` `Pydantic` `NLP` |
+| [**Insight Extractor**](https://github.com/CGFixIT/Insight_Extractor) | Turns long threads into structured notes for you or your agent — BERT + regex extraction with a dynamic keyword stemmer, aimed at threat-intel and OSINT pipelines. [Project page](https://cgfixit.com/ai) | `Python` `BERT` `Sentence-Transformers` `Pydantic` `NLP` |
 | [**Veeam HealthCheck Simplifier**](https://github.com/CGFixIT/Veeam-HealthCheck-Simplifier) | Parses VBR health-check results from CSV/JSON, emits PowerShell remediation, and routes findings to Salesforce or Slack. | `Python` `Veeam` `PowerShell` `Automation` |
 | [**Azure AI Agent Instructions**](https://github.com/CGFixIT/AzureAI-CopilotStudio-PersonalAgent-Instructions) | Production-tested enterprise agent instruction patterns covering source hierarchy, grounding, and hallucination resistance. | `Azure OpenAI` `Copilot Studio` `Prompt Engineering` |
 | [**Windows / Linux / Docker Handbook**](https://github.com/CGFixIT/Windows-Linux--Docker-Handbook) | Admin one-liner cheat sheet spanning 2016–2025, published as a searchable web app. [Live app](https://cg-windows-admin-cmd-ps1-ref.pplx.app) · [GitHub Pages](https://cgfixit.github.io/Windows-Linux--Docker-Handbook/) | `HTML` `PowerShell` `Bash` `Docker` |
